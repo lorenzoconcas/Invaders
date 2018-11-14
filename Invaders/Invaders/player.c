@@ -24,8 +24,10 @@ void playerThread() {
 				  //questo andrà spostato
 		case ' ': {
 			t = fork();
-			if(t == 0)
+			if (t == 0) {
 				animateFire(posX, posY);
+				exit(0);
+			}
 			break;
 		}
 		}

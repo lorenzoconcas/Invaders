@@ -20,5 +20,10 @@ void animateFire(int x, int y) {
  
 //dovrebbe prendere la pipe come parametro in ingresso
 void BulletThread() {
+	int ActiveBullets = 0;
+	while (getch() == ' ') {
+		ActiveBullets++;
+		//devo ottenere le coordinate attuali del player
 
+	}
 }
