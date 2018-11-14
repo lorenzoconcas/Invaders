@@ -106,13 +106,17 @@
     <RemoteCCompileToolExe>g++</RemoteCCompileToolExe>
   </PropertyGroup>
   <ItemGroup>
+    <ClCompile Include="bullets.c" />
+    <ClCompile Include="bullets.h" />
     <ClCompile Include="functions.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="Makefile" />
+    <ClCompile Include="player.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="functions.h" />
     <ClInclude Include="Libs.h" />
+    <ClInclude Include="player.h" />
   </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile />

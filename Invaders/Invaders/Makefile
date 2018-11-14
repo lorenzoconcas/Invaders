@@ -1,5 +1,5 @@
-project: main.c functions.c functions.h
-	gcc -o test main.c functions.c -lncurses -lm
+project:
+	gcc -o test main.c functions.c player.c bullets.c -lncurses -lm
 	clear
 	./test
 clean: test
