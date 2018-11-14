@@ -1,7 +1,9 @@
-#include <stdio.h>
-
+#include "Libs.h"
 int main()
 {
-    printf("hello from Invaders!\n");
+	initscr();
+	//while (true);
+	endwin();
+	
     return 0;
 }
