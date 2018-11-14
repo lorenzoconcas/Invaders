@@ -10,15 +10,14 @@ void printPoints(int points) {
 	int idontcare;
 
 	getmaxyx(stdscr, lastLine, idontcare);
-
+	lastLine--;// iniziamo a contare da 0 perciò riduciamo di uno
 	mvprintw(lastLine, 0, "Punteggio : %d", points);
 	refresh();
 }
 void printString(char * string, int x, int y) {
-
+	mvprintw(y, x, string);
+	refresh();
 }
-
-
 void checkWindow(int max_x, int max_y) {
 	if (max_x < 90) {
 		endwin();
@@ -28,4 +27,37 @@ void checkWindow(int max_x, int max_y) {
 		exit(-1);
 
 	}
+}
+
+void printPlayer(int startX, int startY) {
+	//start X e Y indicano le posizioni da dove iniziare a disegnare il player
+	
+	/*
+	*Aspetto del player :
+	
+		  #
+		#####
+	    # # #
+
+	*/
+	
+
+	mvaddch(startY, startX + 2, '#');
+	for (int i = 0; i < 5; i++) {
+		mvaddch(startY + 1, startX+i, '#');
+	}
+	mvaddch(startY + 2, startX, '#');
+	mvaddch(startY + 2, startX+2, '#');
+	mvaddch(startY + 2, startX+4, '#');
+	refresh();
+}
+void clearPlayer(int startX, int startY) {
+	mvaddch(startY, startX + 2, ' ');
+	for (int i = 0; i < 5; i++) {
+		mvaddch(startY + 1, startX + i, ' ');
+	}
+	mvaddch(startY + 2, startX, ' ');
+	mvaddch(startY + 2, startX + 2, ' ');
+	mvaddch(startY + 2, startX + 4, ' ');
+	refresh();
 }
