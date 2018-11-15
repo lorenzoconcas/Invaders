@@ -112,11 +112,13 @@
     <ClCompile Include="main.c" />
     <ClCompile Include="Makefile" />
     <ClCompile Include="player.c" />
+    <ClCompile Include="UI.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="functions.h" />
     <ClInclude Include="Libs.h" />
     <ClInclude Include="player.h" />
+    <ClInclude Include="UI.h" />
   </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile />

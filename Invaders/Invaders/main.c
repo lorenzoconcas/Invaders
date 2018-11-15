@@ -11,10 +11,13 @@ int main()
 	srand((unsigned int) time(NULL));//inizializziamo il seed random
 	pipe(p);
 	initGraphics(); //setta varie opzioni grafiche
-	checkWindow();
-	//printEnemy(0, 0);
+	checkEnvironment();
+	start_color();
+	
+	
 	processesIDS[0] = fork(); //clono il primo thread
 	if (processesIDS[0] == 0) {
+
 		playerThread();
 	}
 	else {

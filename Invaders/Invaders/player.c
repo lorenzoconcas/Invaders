@@ -34,3 +34,36 @@ void playerThread() {
 		printPlayer(posX, posY);
 	};
 }
+
+void printPlayer(int startX, int startY) {
+	//start X e Y indicano le posizioni da dove iniziare a disegnare il player
+
+	/*
+	*Aspetto del player :
+
+		  #
+		#####
+		# # #
+
+	*/
+
+
+	mvaddch(startY, startX + 2, '#');
+	for (int i = 0; i < 5; i++) {
+		mvaddch(startY + 1, startX + i, '#');
+	}
+	mvaddch(startY + 2, startX, '#');
+	mvaddch(startY + 2, startX + 2, '#');
+	mvaddch(startY + 2, startX + 4, '#');
+	refresh();
+}
+void clearPlayer(int startX, int startY) {
+	mvaddch(startY, startX + 2, ' ');
+	for (int i = 0; i < 5; i++) {
+		mvaddch(startY + 1, startX + i, ' ');
+	}
+	mvaddch(startY + 2, startX, ' ');
+	mvaddch(startY + 2, startX + 2, ' ');
+	mvaddch(startY + 2, startX + 4, ' ');
+	refresh();
+}
