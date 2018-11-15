@@ -4,19 +4,13 @@ void printIntro() {
 
 }
 void printPoints(int points) {
-	int lastLine;
-	int idontcare;
-
-	getmaxyx(stdscr, lastLine, idontcare);
-	lastLine--;// iniziamo a contare da 0 perciò riduciamo di uno
-	mvprintw(lastLine, 0, "Punteggio : %d", points);
-	refresh();
+	
 }
 void printString(char * string, int x, int y) {
 	mvprintw(y, x, string);
 	refresh();
 }
-void printStringA(char * string, ANCHOR_X anchorX, ANCHOR_Y anchorY) {
+void printStringA(char * string, int anchorX, int anchorY) {
 	int x = 0, y = 0;
 	switch (anchorX) {
 	case CENTER_X: {
@@ -29,12 +23,12 @@ void printStringA(char * string, ANCHOR_X anchorX, ANCHOR_Y anchorY) {
 	}	
 	}
 	switch (anchorY) {
-	case CENTER: {
-		x = getmaxy(stdscr) / 2;
+	case CENTER_Y: {
+		y = getmaxy(stdscr) / 2;
 		break;
 	}
 	case BOTTOM: {
-		x = getmaxy(stdscr) - 1;
+		y = getmaxy(stdscr) - 1;
 		break;
 	}
 	}
@@ -58,10 +52,10 @@ void printStringC(char * string, int x, int y, int backgroundColor, int foregrou
 	attroff(COLOR_PAIR(1));
 	refresh();
 }
-void printStringC_A(char * string, ANCHOR_X anchorX, ANCHOR_Y anchorY, int backgroundColor, int foregroundColor) {
+void printStringC_A(char * string, int anchorX, int anchorY, int backgroundColor, int foregroundColor) {
 	int x = 0, y = 0;
 	switch (anchorX) {
-	case CENTER_Y: {
+	case CENTER_X: {
 		x = getmaxx(stdscr) / 2;
 		break;
 	}
@@ -71,12 +65,12 @@ void printStringC_A(char * string, ANCHOR_X anchorX, ANCHOR_Y anchorY, int backg
 	}
 	}
 	switch (anchorY) {
-	case CENTER: {
-		x = getmaxy(stdscr) / 2;
+	case CENTER_Y: {
+		y = getmaxy(stdscr) / 2;
 		break;
 	}
 	case BOTTOM: {
-		x = getmaxy(stdscr) - 1;
+		y = getmaxy(stdscr) - 1;
 		break;
 	}
 	}

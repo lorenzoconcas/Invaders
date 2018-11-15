@@ -1,7 +1,5 @@
 project:
-	if [ -f test ] ; then
-		rm test
-	fi
+	rm -f test
 	gcc -o test main.c functions.c player.c bullets.c UI.c -lncurses -lm
 	clear
 	./test

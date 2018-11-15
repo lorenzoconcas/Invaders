@@ -22,9 +22,9 @@ typedef struct position_struct{
 	int y;
 }position_s;
 
-typedef enum ANCHOR_E_X {
+typedef enum  {
 	LEFT, CENTER_X, RIGHT
 }ANCHOR_X;
-typedef enum ANCHOR_E_Y {
+typedef enum  {
 	TOP, CENTER_Y, BOTTOM
 }ANCHOR_Y;

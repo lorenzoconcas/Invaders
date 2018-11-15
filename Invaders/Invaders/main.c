@@ -13,7 +13,7 @@ int main()
 	initGraphics(); //setta varie opzioni grafiche
 	checkEnvironment();
 	start_color();
-	
+	printStringC_A("Testing...", LEFT, BOTTOM, COLOR_WHITE, COLOR_BLACK);
 	
 	processesIDS[0] = fork(); //clono il primo thread
 	if (processesIDS[0] == 0) {
